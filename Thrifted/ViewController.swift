@@ -18,6 +18,11 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     let buttonText = NSAttributedString(string: "Login with Facebook")
     
+    var name = ""
+    var email = ""
+    var url = ""
+    var gender = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,33 +53,39 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             guard let result = result as? NSDictionary,
                 let email = result["email"] as? String,
                 let user_name = result["first_name"] as? String,
+                let user_lastname = result["last_name"] as? String,
                 let user_gender = result["gender"] as? String
             else {
                 return
             }
             
             //Use this when we need to pull the users image data...
-//            if let picture = result["picture"] as? NSDictionary, let data = picture["data"] as? NSDictionary, let url = data["url"] as? String {
-//
-//                if let profileURL = URL(string: url) {
-//
-//                    DispatchQueue.global().async {
-//                        if let data = try? Data(contentsOf: profileURL) {
-//                            DispatchQueue.main.async {
-//                                self.profileImage.image = UIImage(data: data)
-//                            }
-//                        }
-//                    }
-//                }
-//            }
+            if let picture = result["picture"] as? NSDictionary, let data = picture["data"] as? NSDictionary, let url = data["url"] as? String {
+                self.url = url
+            }
             
-            print(email)
+            self.name = "\(user_name) \(user_lastname)"
+            self.email = email
+            self.gender = user_gender
+            
+            self.performSegue(withIdentifier: "ShowHomeScreen", sender: nil)
         }
+        
+        self.loginButton.setAttributedTitle(NSAttributedString(string: "Logout of Facebook"), for: .normal)
     }
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        print("Completed login")
         fetchProfile()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? HomeScreenViewController {
+            destination.name = self.name
+            destination.email = self.email
+            destination.url = self.url
+            destination.gender = self.gender
+            navigationItem.titleView?.backgroundColor = UIColor.black
+        }
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
@@ -83,6 +94,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     func logoutProfile(){
         //TODO Logout
+        self.loginButton.setAttributedTitle(NSAttributedString(string: "Login with Facebook"), for: .normal)
     }
     
     func loginButtonWillLogin(_ loginButton: FBSDKLoginButton!) -> Bool {

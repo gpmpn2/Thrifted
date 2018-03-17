@@ -17,6 +17,7 @@
 		B85DA4F0205D9DE30063EE69 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85DA4ED205D9DE20063EE69 /* FBSDKCoreKit.framework */; };
 		B85DA4F1205D9DE30063EE69 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85DA4EE205D9DE20063EE69 /* Bolts.framework */; };
 		B85DA4F2205D9DE30063EE69 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85DA4EF205D9DE30063EE69 /* FBSDKLoginKit.framework */; };
+		B85DA4F4205DAFC20063EE69 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85DA4F3205DAFC20063EE69 /* HomeScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		B85DA4ED205D9DE20063EE69 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		B85DA4EE205D9DE20063EE69 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		B85DA4EF205D9DE30063EE69 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		B85DA4F3205DAFC20063EE69 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				B8356D74205D949C00373252 /* AppDelegate.swift */,
 				B8356D76205D949C00373252 /* ViewController.swift */,
 				B8356D78205D949C00373252 /* Main.storyboard */,
+				B85DA4F3205DAFC20063EE69 /* HomeScreenViewController.swift */,
 				B8356D7B205D949C00373252 /* Assets.xcassets */,
 				B8356D7D205D949C00373252 /* LaunchScreen.storyboard */,
 				B8356D80205D949C00373252 /* Info.plist */,
@@ -276,6 +279,7 @@
 			files = (
 				B8356D77205D949C00373252 /* ViewController.swift in Sources */,
 				B8356D75205D949C00373252 /* AppDelegate.swift in Sources */,
+				B85DA4F4205DAFC20063EE69 /* HomeScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

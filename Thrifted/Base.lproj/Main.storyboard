@@ -66,10 +66,60 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="joj-En-mtt"/>
+                    <connections>
+                        <segue destination="X22-RX-cWW" kind="show" identifier="ShowHomeScreen" id="dbt-Vm-0e3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
+        </scene>
+        <!--Home Screen View Controller-->
+        <scene sceneID="T5c-3J-tvI">
+            <objects>
+                <viewController id="X22-RX-cWW" customClass="HomeScreenViewController" customModule="Thrifted" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9IB-JT-b42">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMAIL HERE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hy5-1z-1es">
+                                <rect key="frame" x="140" y="355" width="96" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME HERE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFD-Pg-MCR">
+                                <rect key="frame" x="140" y="319" width="95" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tlf-UJ-UA0">
+                                <rect key="frame" x="68" y="446" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xEF-pV-ikb" firstAttribute="bottom" secondItem="Tlf-UJ-UA0" secondAttribute="bottom" constant="93" id="5FA-6w-3RE"/>
+                            <constraint firstItem="Tlf-UJ-UA0" firstAttribute="top" secondItem="Hy5-1z-1es" secondAttribute="bottom" constant="70" id="6WT-oI-PG5"/>
+                            <constraint firstItem="Hy5-1z-1es" firstAttribute="centerX" secondItem="xEF-pV-ikb" secondAttribute="centerX" id="KRJ-53-xTv"/>
+                            <constraint firstItem="Hy5-1z-1es" firstAttribute="centerY" secondItem="xEF-pV-ikb" secondAttribute="centerY" id="VnU-Bh-TXR"/>
+                            <constraint firstItem="Hy5-1z-1es" firstAttribute="top" secondItem="NFD-Pg-MCR" secondAttribute="bottom" constant="15" id="d7M-NV-3lM"/>
+                            <constraint firstItem="Tlf-UJ-UA0" firstAttribute="leading" secondItem="xEF-pV-ikb" secondAttribute="leading" constant="68" id="dgi-k8-MpU"/>
+                            <constraint firstItem="xEF-pV-ikb" firstAttribute="trailing" secondItem="Tlf-UJ-UA0" secondAttribute="trailing" constant="67" id="dhD-rU-zYm"/>
+                            <constraint firstItem="NFD-Pg-MCR" firstAttribute="centerX" secondItem="xEF-pV-ikb" secondAttribute="centerX" id="j1v-QJ-qLM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xEF-pV-ikb"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailLabel" destination="Hy5-1z-1es" id="Pel-Gd-mzM"/>
+                        <outlet property="nameLabel" destination="NFD-Pg-MCR" id="LfR-Fi-kcQ"/>
+                        <outlet property="userImageView" destination="Tlf-UJ-UA0" id="GGR-AH-nln"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="66C-DJ-bFj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="860" y="118"/>
         </scene>
     </scenes>
 </document>
