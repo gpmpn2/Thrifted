@@ -22,6 +22,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     var email = ""
     var url = ""
     var gender = ""
+    //Turn this into an object of a person please...
     
     override func viewDidLoad() {
         super.viewDidLoad()
